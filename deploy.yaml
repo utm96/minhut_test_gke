@@ -26,7 +26,9 @@ spec:
         app: hello-server
     spec:
       containers:
+      # - image: minhut/debian-lib:lastest
       - image: mageai/mageai
+
         volumeMounts:
         - name: mageai-volume
           mountPath: /usr/local/lib/R/site-library
@@ -35,12 +37,12 @@ spec:
         resources:
           limits:
             cpu: 500m
-            ephemeral-storage: 3Gi
-            memory: 3Gi
-          requests:
-            cpu: 500m
             ephemeral-storage: 2Gi
             memory: 2Gi
+          requests:
+            cpu: 500m
+            ephemeral-storage: 1Gi
+            memory: 1Gi
         securityContext:
           capabilities:
             drop:
