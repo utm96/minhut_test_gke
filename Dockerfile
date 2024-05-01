@@ -27,4 +27,4 @@ RUN \
   R -e "install.packages('renv', repos='http://cran.us.r-project.org')" && \
   R -e 'install.packages(c("anomalize", "caret", "caTools", "changepoint", "dplyr", "janitor", "lubridate", "modeltime", "modeltime.ensemble", "modeltime.resample", "naniar", "prophet", "randomForest", "rsample", "timetk", "tsoutliers", "tune"))'
 
-CMD ["bash"]
+CMD ["python3"]

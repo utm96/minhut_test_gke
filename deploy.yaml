@@ -27,7 +27,8 @@ spec:
     spec:
       containers:
       # - image: minhut/debian-lib:lastest
-      - image: mageai/mageai
+      # - image: mageai/mageai
+      - image: python:3.10-bookworm
 
         volumeMounts:
         - name: mageai-volume
