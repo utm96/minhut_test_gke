@@ -35,12 +35,12 @@ spec:
         resources:
           limits:
             cpu: 500m
-            ephemeral-storage: 1Gi
-            memory: 1Gi
+            ephemeral-storage: 3Gi
+            memory: 3Gi
           requests:
             cpu: 500m
-            ephemeral-storage: 1Gi
-            memory: 1Gi
+            ephemeral-storage: 2Gi
+            memory: 2Gi
         securityContext:
           capabilities:
             drop:
