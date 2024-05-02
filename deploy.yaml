@@ -10,7 +10,7 @@ metadata:
   name: hello-server
   namespace: default
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: hello-server
@@ -37,7 +37,7 @@ spec:
         volumeMounts:
         - name: mageai-volume
           mountPath: /data
-        command: ["sh", "-c", "cp -R /usr/local/lib/R/site-library-backup/* /data/"]
+        command: ["sh", "-c", "cp -R /usr/local/lib/R/site-library/* /data/"]
       containers:
       # - image: minhut/debian-lib:lastest
       - image: mageai/mageai

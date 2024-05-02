@@ -21,12 +21,9 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Create backup directory for R site-library
-RUN mkdir -p /usr/local/lib/R/site-library-backup && \
-    chown -R root:root /usr/local/lib/R/site-library-backup
 
 # Install R packages
-RUN R -e 'install.packages(c("remotes", "pacman", "anomalize", "caret", "caTools", "changepoint", "dplyr","shiny","golem", "janitor", "lubridate", "modeltime", "modeltime.resample", "naniar", "prophet", "randomForest", "rsample", "timetk", "tsoutliers", "tune"), lib="/usr/local/lib/R/site-library-backup")' && \
-    R -e 'pacman::p_install_gh("business-science/modeltime.ensemble", lib="/usr/local/lib/R/site-library-backup")'
+RUN R -e 'install.packages(c("remotes", "pacman", "anomalize", "caret", "caTools", "changepoint", "dplyr","shiny","golem", "janitor", "lubridate", "modeltime", "modeltime.resample", "naniar", "prophet", "randomForest", "rsample", "timetk", "tsoutliers", "tune"))' && \
+    R -e 'pacman::p_install_gh("business-science/modeltime.ensemble")'
 
 CMD ["bash"]
