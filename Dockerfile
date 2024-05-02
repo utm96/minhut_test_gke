@@ -34,7 +34,7 @@ RUN mkdir -p /usr/local/lib/R/site-library-backup && \
 # Install R packages
 RUN R -e 'install.packages(c("remotes", "pacman"),lib="/usr/local/lib/R/site-library")'
 # Install R packages using pacman
-RUN R -e 'pacman::p_install(anomalize, caret, caTools, changepoint, dplyr, janitor, lubridate, modeltime, modeltime.resample, naniar, prophet, randomForest, rsample, timetk, tsoutliers, tune, lib="/usr/local/lib/R/site-library-backup")'
+RUN R -e 'install.packages(c("anomalize", "caret", "caTools", "changepoint", "dplyr", "janitor", "lubridate", "modeltime", "modeltime.resample", "naniar", "prophet", "randomForest", "rsample", "timetk", "tsoutliers", "tune"), lib="/usr/local/lib/R/site-library")'
 
 # Install modeltime.ensemble package using pacman
 RUN R -e 'pacman::p_install_gh("business-science/modeltime.ensemble", lib="/usr/local/lib/R/site-library-backup")'
