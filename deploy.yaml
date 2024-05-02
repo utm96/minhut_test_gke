@@ -27,8 +27,8 @@ spec:
     spec:
       containers:
       # - image: minhut/debian-lib:lastest
-      # - image: mageai/mageai
-      - image: python:3.10-bookworm
+      - image: mageai/mageai
+      # - image: python:3.10-bookworm
 
         volumeMounts:
         - name: mageai-volume
@@ -37,12 +37,12 @@ spec:
         name: mageai
         resources:
           limits:
-            cpu: 500m
+            cpu: 2
             ephemeral-storage: 2Gi
-            memory: 2Gi
+            memory: 4Gi
           requests:
             cpu: 500m
-            ephemeral-storage: 1Gi
+            ephemeral-storage: 3Gi
             memory: 1Gi
         securityContext:
           capabilities:
