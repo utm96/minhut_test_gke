@@ -1,4 +1,4 @@
-FROM debian:latest
+FROM python:3.10-bookworm
 
 LABEL description="Deploy lib container on dockerhub"
 USER root
