@@ -24,7 +24,8 @@ RUN \
     gfortran libssl-dev libxml2-dev make pandoc zlib1g-dev libblas-dev liblapack-dev && \
   apt-get clean && \
   rm -rf /var/lib/apt/lists/*
-
+RUN mkdir -p /usr/local/lib/R/site-library-backup && \
+    chown -R root:root /usr/local/lib/R/site-library-backup
 ## R Packages
 RUN R -e "\
   install.packages(c('pacman', 'renv', 'anomalize', 'caret', 'caTools', 'changepoint', \
