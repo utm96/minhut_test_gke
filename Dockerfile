@@ -26,7 +26,7 @@ RUN mkdir -p /usr/local/lib/R/site-library-backup && \
     chown -R root:root /usr/local/lib/R/site-library-backup
 
 # Install R packages
-RUN R -e 'install.packages(c("remotes", "pacman", "anomalize", "caret", "caTools", "changepoint", "dplyr","shiny","golem", "janitor", "lubridate", "modeltime", "modeltime.resample", "naniar", "prophet", "randomForest", "rsample", "timetk", "tsoutliers", "tune"), lib="/usr/local/lib/R/site-library")' && \
+RUN R -e 'install.packages(c("remotes", "pacman", "anomalize", "caret", "caTools", "changepoint", "dplyr","shiny","golem", "janitor", "lubridate", "modeltime", "modeltime.resample", "naniar", "prophet", "randomForest", "rsample", "timetk", "tsoutliers", "tune"), lib="/usr/local/lib/R/site-library-backup")' && \
     R -e 'pacman::p_install_gh("business-science/modeltime.ensemble", lib="/usr/local/lib/R/site-library-backup")'
 
 CMD ["bash"]
