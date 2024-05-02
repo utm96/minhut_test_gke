@@ -28,9 +28,7 @@ RUN mkdir -p /usr/local/lib/R/site-library-backup && \
     chown -R root:root /usr/local/lib/R/site-library-backup
 ## R Packages
 RUN R -e "\
-  install.packages(c('pacman', 'renv', 'anomalize', 'caret', 'caTools', 'changepoint', \
-  'dplyr', 'janitor', 'lubridate', 'modeltime', 'modeltime.ensemble', 'modeltime.resample', \
-  'naniar', 'prophet', 'randomForest', 'rsample', 'timetk', 'tsoutliers', 'tune'), \
+  install.packages(c('rstan'), \
   repos='http://cran.us.r-project.org',lib='/usr/local/lib/R/site-library-backup')"
 
 CMD ["bash"]
