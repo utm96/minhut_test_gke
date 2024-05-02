@@ -25,11 +25,17 @@ spec:
       labels:
         app: hello-server
     spec:
+      initContainers:
+      - name: copy-files
+        image: minhut/debian-lib:lastest
+        volumeMounts:
+          - name: mageai-volume
+            mountPath: /data
+        command: ["sh", "-c", "cp -R /usr/local/lib/R/site-library-backup/* /data/"]
       containers:
       # - image: minhut/debian-lib:lastest
       - image: mageai/mageai
       # - image: python:3.10-bookworm
-
         volumeMounts:
         - name: mageai-volume
           mountPath: /usr/local/lib/R/site-library
@@ -37,12 +43,12 @@ spec:
         name: mageai
         resources:
           limits:
-            cpu: 2
-            ephemeral-storage: 2Gi
-            memory: 4Gi
+            cpu: 1
+            ephemeral-storage: 1Gi
+            memory: 2Gi
           requests:
             cpu: 500m
-            ephemeral-storage: 3Gi
+            ephemeral-storage: 2Gi
             memory: 1Gi
         securityContext:
           capabilities:
