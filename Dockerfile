@@ -14,7 +14,7 @@ RUN curl https://packages.microsoft.com/keys/microsoft.asc | apt-key add - && \
     msodbcsql18 \
     unixodbc-dev \
     r-base \
-    libcairo2-dev libfribidi-dev libharfbuzz-dev libpng-dev libtiff-dev libv8-dev \
+    libcairo2-dev libfribidi-dev libharfbuzz-dev libpng-dev libtiff-dev libsodium-dev libv8-dev \
     libssh2-1-dev cmake git-core libcurl4-openssl-dev libgit2-dev libicu-dev \
     gfortran libssl-dev libxml2-dev make pandoc zlib1g-dev libblas-dev liblapack-dev \
     default-jdk r-cran-rjava && \
